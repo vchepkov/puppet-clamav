@@ -28,7 +28,7 @@ class clamav::params {
     $groups            = undef
 
     #### clamd vars ####
-    $clamd_package     =  versioncmp($::operatingsystemrelease, '7.0') >= 0 ? {
+    $clamd_package     =  (versioncmp($::operatingsystemrelease, '7.0') >= 0) ? {
       true  => 'clamav-server',
       false => 'clamd',
     }
